@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
+import GameTile from './GameTile'
 
 const GamesIndexContainer = props => {
-  const [games, setGames] = useState()
+  const [games, setGames] = useState([]);
 
   useEffect(() => {
     fetch("/api/v1/games.json")
@@ -16,26 +17,28 @@ const GamesIndexContainer = props => {
     })
     .then(response => response.json())
     .then(gameBody => {
-      setGames(gameBody)
-      debugger
+      const gamesArr = gameBody
+
+      setGames(gamesArr)
+
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }, [])
 
-  // let gameTiles = games.map((game) => {
-  //   return (
-  //     <GameTile
-  //       key={game.key}
-  //       name={game.name}
-  //       description={game.description}
-  //       playerNum={game.player_num}
-  //     />
-  //   )
-  // })
+  let gameTiles = games.map((game) => {
+    return (
+      <GameTile
+        key={game.key}
+        name={game.name}
+        description={game.description}
+        playerNum={game.player_num}
+      />
+    )
+  })
 
   return(
     <div>
-      hello
+      {gameTiles}
     </div>
   )
 }
