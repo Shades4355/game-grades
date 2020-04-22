@@ -28,7 +28,7 @@ const GamesIndexContainer = props => {
   let gameTiles = games.map((game) => {
     return (
       <GameTile
-        key={game.key}
+        key={game.id}
         name={game.name}
         description={game.description}
         playerNum={game.player_num}
@@ -37,7 +37,7 @@ const GamesIndexContainer = props => {
   })
 
   return(
-    <div>
+    <div className='grid-x grid-margin-x'>
       {gameTiles}
     </div>
   )

@@ -5,7 +5,7 @@ const GameTile = props => {
   const description = props.description
   const playerNum = props.playerNum
   return (
-    <div>
+    <div className='callout secondary cell'>
       <h2>{name}</h2>
       <p>Number of Players: {playerNum}</p>
       <p>{description}</p>
