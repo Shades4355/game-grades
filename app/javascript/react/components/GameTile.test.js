@@ -13,20 +13,16 @@ describe("GameTile", () => {
     wrapper = mount(
       <GameTile
         name="Game 1"
-        description="Nothing matters"
-        playerNum="2-8 who cares"
+        description="A game to play!"
+        playerNum="2-8"
       />)
   })
 
   it ("should display the game name", () => {
-    expect(wrapper.find("h2").text()).toBe("Game 1")
-  })
-
-  it ("should display the game description", () => {
-    expect(wrapper.find("p").at(1).text()).toBe("Nothing matters")
+    expect(wrapper.find("h3").text()).toBe("Game 1")
   })
 
   it ("should display the number of players", () => {
-    expect(wrapper.find("p").at(0).text()).toBe("Number of Players: 2-8 who cares")
+    expect(wrapper.find("p").at(0).text()).toBe("Number of Players: 2-8")
   })
 })
