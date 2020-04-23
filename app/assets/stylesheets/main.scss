@@ -9,28 +9,33 @@ $lightgreen: #21b211;
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 .custom-header {
-    background-color: $lightblue;
+  background-color: $lightblue;
+  color: white;
+
+  a {
     color: white;
-    a {
-        color: white;
-        &:hover {
-            text-decoration: underline;
-        }
+    
+    &:hover {
+      text-decoration: underline;
     }
+  }
 }
 
 .logo-text {
-    h1 {
-        line-height: 1;
-        margin-top: 1rem;
-        margin-bottom: 0.5rem;
+
+  h1 {
+    line-height: 1;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    color: #C74519;
+    font-family: "Press Start 2P";
+
+    &:hover {
+      text-decoration: none;
+      color: $yellow
     }
-    a {
-      color: #C74519;
-      font-family: "Press Start 2P";
-      &:hover {
-          text-decoration: none;
-          color: $yellow
-      }
-    }
+  }
 }
