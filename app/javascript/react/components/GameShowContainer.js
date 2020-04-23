@@ -25,10 +25,16 @@ const GameShowContainer = props => {
   }, [])
 
   return (
-    <div>
-      <h1> {game.name} </h1>
-      <div> {game.player_num} </div>
-      <div> {game.description} </div>
+    <div className='grid-x grid-margin-x'>
+      <h1 className='cell small-12'>
+        {game.name}
+      </h1>
+      <div className='cell small-12'>
+        Number of Players: {game.player_num}
+      </div>
+      <div className='cell small-12'>
+        Description: {game.description}
+      </div>
     </div>
   )
 }

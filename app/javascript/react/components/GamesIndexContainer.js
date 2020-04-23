@@ -29,6 +29,7 @@ const GamesIndexContainer = props => {
     return (
       <GameTile
         key={game.id}
+        id={game.id}
         name={game.name}
         description={game.description}
         playerNum={game.player_num}
