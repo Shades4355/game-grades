@@ -1,6 +1,7 @@
 import React from 'react'
 import Enzyme, { mount } from "enzyme"
 import Adapter from "enzyme-adapter-react-16"
+import { BrowserRouter } from 'react-router-dom'
 import GameTile from './GameTile'
 
 
@@ -11,11 +12,13 @@ describe("GameTile", () => {
 
   beforeEach(() => {
     wrapper = mount(
-      <GameTile
-        name="Game 1"
-        description="A game to play!"
-        playerNum="2-8"
-      />)
+      <BrowserRouter>
+        <GameTile
+          name="Game 1"
+          description="A game to play!"
+          playerNum="2-8"
+        />
+      </BrowserRouter>)
   })
 
   it ("should display the game name", () => {
