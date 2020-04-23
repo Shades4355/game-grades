@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import GameShowTile from './GameShowTile'
 
 
 const GameShowContainer = props => {
@@ -25,16 +26,14 @@ const GameShowContainer = props => {
   }, [])
 
   return (
-    <div className='grid-x grid-margin-x'>
-      <h1 className='cell small-12'>
-        {game.name}
-      </h1>
-      <div className='cell small-12'>
-        Number of Players: {game.player_num}
-      </div>
-      <div className='cell small-12'>
-        Description: {game.description}
-      </div>
+    <div>
+    <GameShowTile
+      key={game.id}
+      id={game.id}
+      name={game.name}
+      description={game.description}
+      playerNum={game.player_num}
+    />
     </div>
   )
 }
