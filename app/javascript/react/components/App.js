@@ -1,5 +1,6 @@
 import React from 'react'
 import GamesIndexContainer from './GamesIndexContainer'
+import NewGameContainer from './NewGameContainer'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
 export const App = (props) => {
@@ -7,6 +8,7 @@ export const App = (props) => {
     <BrowserRouter>
       <Switch>
         <Route exact path='/games' component={GamesIndexContainer}/>
+        <Route exact path='/games/new' component={NewGameContainer}/>
       </Switch>
     </BrowserRouter>
 
