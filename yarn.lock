@@ -1141,9 +1141,9 @@
   integrity sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
 
 "@types/node@*":
-  version "13.13.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.13.1.tgz#1ba94c5a177a1692518bfc7b41aec0aa1a14354e"
-  integrity sha512-uysqysLJ+As9jqI5yqjwP3QJrhOcUwBjHUlUxPxjbplwKoILvXVsmYWEhfmAQlrPfbRZmhJB007o4L9sKqtHqQ==
+  version "13.13.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.13.2.tgz#160d82623610db590a64e8ca81784e11117e5a54"
+  integrity sha512-LB2R1Oyhpg8gu4SON/mfforE525+Hi/M1ineICEDftqNVTyFg1aRIeGuTvXAoWHc4nbrFncWtJgMmoyRvuGh7A==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -1852,9 +1852,9 @@ babel-plugin-check-es2015-constants@^6.22.0:
     babel-runtime "^6.22.0"
 
 babel-plugin-dynamic-import-node@^2.3.0:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/babel-plugin-dynamic-import-node/-/babel-plugin-dynamic-import-node-2.3.2.tgz#14fb5accb300f9aac0151949f6192259f1403c4a"
-  integrity sha512-yvczAMjbc73xira9yTyF1XnEmkX8QwlUhmxuhimeMUeAaA6s7busTPRVDzhVG7eeBdNcRiZ/mAwFrJ9It4vQcg==
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/babel-plugin-dynamic-import-node/-/babel-plugin-dynamic-import-node-2.3.3.tgz#84fda19c976ec5c6defef57f9427b3def66e17a3"
+  integrity sha512-jZVI+s9Zg3IqA/kdi0i6UDCybUI3aSBLnglhYbSSjKlV7yF1F/5LWv8MakQmvYpnbJDS6fcBL2KzHSxNCMtWSQ==
   dependencies:
     object.assign "^4.1.0"
 
@@ -12489,9 +12489,9 @@ yargs@~3.10.0:
     window-size "0.1.0"
 
 yeoman-environment@^2.0.5, yeoman-environment@^2.1.1, yeoman-environment@^2.3.4:
-  version "2.9.4"
-  resolved "https://registry.yarnpkg.com/yeoman-environment/-/yeoman-environment-2.9.4.tgz#e07080ba537d9783431d665cbec3a2bad4b417f7"
-  integrity sha512-iWxGhG2G0wnFAWK12J925o5UCMpsyMS77cgyLwFoErS6lvC0N6SpvvYFYcYxFQKmKtxI7X+Hmpvg+Y+7hM4FPw==
+  version "2.9.5"
+  resolved "https://registry.yarnpkg.com/yeoman-environment/-/yeoman-environment-2.9.5.tgz#372ff3f81bc6a979c6d7f7c9d7d8822088c6a805"
+  integrity sha512-ntxV8VTZbP8QFuJZGT7vG8AsKeyGz8lXlfq2V2T5sl6SrU6UAEVgRreEGz9t+JbFGx1CSM/Ly2atG/avGuheyQ==
   dependencies:
     chalk "^2.4.1"
     debug "^3.1.0"
@@ -12544,9 +12544,9 @@ yeoman-generator@^2.0.5:
     yeoman-environment "^2.0.5"
 
 yeoman-generator@^4.8.2:
-  version "4.8.2"
-  resolved "https://registry.yarnpkg.com/yeoman-generator/-/yeoman-generator-4.8.2.tgz#054e6123251bf92f7fd5aa91bfdf6a18632559c9"
-  integrity sha512-4kJAf2u5mee8yO7Ph6e64KLHeC7sCSYPCP7YcCUjussBFzoMEqJ2+Dn2Yj41rBLArSBBmZOQ/e2bMYlh6qQ9ag==
+  version "4.8.3"
+  resolved "https://registry.yarnpkg.com/yeoman-generator/-/yeoman-generator-4.8.3.tgz#efbe9a7ba630dc30325ed9724f4766583832005b"
+  integrity sha512-yDPHBhfglqiyYlqBnaAmcE/wPznwSx11HCGVCpnnsqpnp45HmdsuBtiFSNDcygiFmz1HmkFWRLWHTai/b+9eiQ==
   dependencies:
     async "^2.6.2"
     chalk "^2.4.2"
@@ -12573,5 +12573,6 @@ yeoman-generator@^4.8.2:
     text-table "^0.2.0"
     through2 "^3.0.1"
   optionalDependencies:
+    grouped-queue "^1.1.0"
     mem-fs-editor "^6.0.0"
     yeoman-environment "^2.3.4"
