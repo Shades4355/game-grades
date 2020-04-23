@@ -18,9 +18,7 @@ const GamesIndexContainer = props => {
     .then(response => response.json())
     .then(gameBody => {
       const gamesArr = gameBody
-
       setGames(gamesArr)
-
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }, [])

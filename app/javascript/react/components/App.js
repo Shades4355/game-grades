@@ -13,7 +13,6 @@ export const App = (props) => {
         <Route path='/games/:id' component={GameShowContainer}/>
       </Switch>
     </BrowserRouter>
-
   )
 }
 
