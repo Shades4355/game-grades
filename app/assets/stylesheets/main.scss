@@ -1,0 +1,41 @@
+$yellow: #E5C000;
+$darkblue: #0377FF;
+$lightblue: #44A9FE;
+$darkgreen: #28A811;
+$lightgreen: #21b211;
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.custom-header {
+  background-color: $lightblue;
+  color: white;
+
+  a {
+    color: white;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.logo-text {
+
+  h1 {
+    line-height: 1;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    color: #C74519;
+    font-family: "Press Start 2P";
+
+    &:hover {
+      text-decoration: none;
+      color: $yellow
+    }
+  }
+}
