@@ -12,8 +12,8 @@ describe("GameTile", () => {
     wrapper = mount(
       <GameTile
         name="Game 1"
-        description="Nothing matters"
-        playerNum="2-8 who cares"
+        description="This is a game!"
+        playerNum="2-8"
       />)
   })
 
