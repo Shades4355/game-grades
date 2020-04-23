@@ -19,16 +19,16 @@ const GameShowContainer = props => {
     .then(response => response.json())
     .then(gameBody => {
       const gamesArr = gameBody
-
       setGame(gamesArr)
-
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }, [])
 
   return (
     <div>
-      {game.name}
+      <h1> {game.name} </h1>
+      <div> {game.player_num} </div>
+      <div> {game.description} </div>
     </div>
   )
 }
