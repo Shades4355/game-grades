@@ -13,7 +13,7 @@ describe("GameTile", () => {
     wrapper = mount(
       <GameTile
         name="Game 1"
-        description="A game to play!"
+        description="This is a game!"
         playerNum="2-8"
       />)
   })
