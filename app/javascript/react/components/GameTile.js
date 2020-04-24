@@ -8,11 +8,11 @@ const GameTile = props => {
   const id = props.id
 
   return (
-    <div className='callout secondary cell small-12 medium-4'>
+    <div className='callout bg-dark-green cell small-12 medium-4'>
       <Link to={`/games/${id}`}>
-        <h3>{name}</h3>
+        <h4 className='title link-white'>{name}</h4>
       </Link>
-      <p>Number of Players: {playerNum}</p>
+      <p className='body'>Number of Players: {playerNum}</p>
     </div>
   )
 }

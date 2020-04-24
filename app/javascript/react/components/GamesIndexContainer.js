@@ -36,8 +36,10 @@ const GamesIndexContainer = props => {
   })
 
   return(
-    <div className='grid-x grid-margin-x'>
-      {gameTiles}
+    <div className='grid-container'>
+      <div className='grid-x grid-margin-x grid-padding-y'>
+        {gameTiles}
+      </div>
     </div>
   )
 }
