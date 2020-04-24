@@ -14,7 +14,7 @@ $lightgreen: #21b211;
 
   a {
     color: white;
-    
+
     &:hover {
       text-decoration: underline;
     }
@@ -38,4 +38,12 @@ $lightgreen: #21b211;
       color: $yellow
     }
   }
+}
+
+.body {
+  font-family: "Noto Sans"
+}
+
+.title {
+  font-family: "IBM Plex Serif"
 }
