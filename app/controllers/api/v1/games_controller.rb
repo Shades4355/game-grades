@@ -5,6 +5,10 @@ class Api::V1::GamesController < ApplicationController
     render json: Game.all
   end
 
+   def show
+    render json: Game.find(params[:id])
+  end
+  
   def create
     new_game = Game.new(game_params)
     if new_game.save
@@ -25,4 +29,5 @@ class Api::V1::GamesController < ApplicationController
   def game_params
     params.require(:game).permit(:name, :description, :player_num)
   end
+
 end
