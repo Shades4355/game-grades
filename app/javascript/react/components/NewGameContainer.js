@@ -27,6 +27,9 @@ const NewGameContainer = props => {
     })
     .then(response => response.json())
     .then(parsedData => {
+      if (parsedData.errors){
+      setErrors(parsedData.errors)
+    }
       setShouldRedirect(true)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`)) // show validation errors
