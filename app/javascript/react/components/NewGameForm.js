@@ -50,6 +50,7 @@ const NewGameForm = props => {
         <ErrorList
           errors={errors}
         />
+      
         <label htmlFor="name">Game Name:</label>
         <input
           type="text"
@@ -57,7 +58,7 @@ const NewGameForm = props => {
           id="name"
           onChange={handleChange}
           value={formVals.name}
-          />
+        />
 
         <label htmlFor="description">Game Description:</label>
         <textarea
@@ -65,14 +66,15 @@ const NewGameForm = props => {
           id="description"
           onChange={handleChange}
           value={formVals.description}
-          />
+        />
 
         <label htmlFor="player_num">Number of Players:</label>
         <input
           type="text"
           name="player_num"
           id="player_num"
-          onChange={handleChange}/>
+          onChange={handleChange}
+        />
 
         <input className="button" type="submit" />
       </form>

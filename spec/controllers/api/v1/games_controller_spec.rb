@@ -59,9 +59,9 @@ RSpec.describe Api::V1::GamesController, type: :controller do
 
     it "returns validation error json" do
       post :create, params: bad_game_data, format: :json
-        api_response = JSON.parse(response.body)
+      api_response = JSON.parse(response.body)
 
-        expect(api_response["errors"]).to eq "Player number can't be blank"
+      expect(api_response["errors"]).to eq "Player number can't be blank"
     end
   end
 end
