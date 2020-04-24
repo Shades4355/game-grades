@@ -56,3 +56,6 @@ gem 'webpacker', '~> 3.3'
 
 # Use CarrierWave to handle file uploads
 gem 'carrierwave'
+
+# Use Fog to integrate with cloud storage
+gem 'fog'
