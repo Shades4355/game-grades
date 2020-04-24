@@ -7,12 +7,16 @@ class Api::V1::GamesController < ApplicationController
 
   def create
     new_game = Game.new(game_params)
-    binding.pry
     if new_game.save
-      binding.pry
       render json: new_game
     else
-      render json: { error: new_game.errors.full_messages }, status: :unprocessable_entity
+      errors_array = new_game.errors.full_messages
+      formatted_errors = errors_array.each { |error|
+        if error.include?("Player num")
+          error.sub!("num", "number")
+        end
+      }
+      render json: { errors: formatted_errors.to_sentence }, status: :unprocessable_entity
     end
   end
 

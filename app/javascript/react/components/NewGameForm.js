@@ -1,6 +1,10 @@
 import React, { useState } from "react"
+import _ from 'lodash'
+
+import ErrorList from "./ErrorList"
 
 const NewGameForm = props => {
+  const [errors, setErrors] = useState({})
 
   const [formVals, setFormVals] = useState({
     name: "",
@@ -15,17 +19,39 @@ const NewGameForm = props => {
     })
   }
 
+  const validateForm = () => {
+    let newErrors = {}
+    Object.keys(formVals).forEach((field) => {
+      if(formVals[field].trim() === "") {
+        if(field === "player_num"){
+          field = "Number of players"
+        }
+        newErrors = {
+          ...newErrors,
+          [field]: "is blank"
+        }
+      }
+    })
+    setErrors(newErrors)
+    return _.isEmpty(newErrors)
+  }
+
   const handleSubmit = event => {
     event.preventDefault();
-    props.handleFormSubmit(formVals)
+    if(validateForm()){
+      props.handleFormSubmit(formVals)
+    }
   }
 
   return (
     <div>
       <h2>Add a game to our library!</h2>
       <form onSubmit={handleSubmit}>
+        <ErrorList
+          errors={errors}
+        />
         <label htmlFor="name">Game Name:</label>
-        <input 
+        <input
           type="text"
           name="name"
           id="name"
@@ -34,7 +60,7 @@ const NewGameForm = props => {
           />
 
         <label htmlFor="description">Game Description:</label>
-        <textarea 
+        <textarea
           name="description"
           id="description"
           onChange={handleChange}
@@ -48,7 +74,7 @@ const NewGameForm = props => {
           id="player_num"
           onChange={handleChange}/>
 
-        <input type="submit" />
+        <input className="button" type="submit" />
       </form>
     </div>
   )

@@ -18,7 +18,6 @@ const NewGameContainer = props => {
     })
     .then(response => {
       if(response.ok) {
-        debugger
         return response
       } else {
         let errorMessage = `${response.status} (${response.statusText})`,
@@ -28,7 +27,6 @@ const NewGameContainer = props => {
     })
     .then(response => response.json())
     .then(parsedData => {
-      debugger
       setShouldRedirect(true)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`)) // show validation errors
