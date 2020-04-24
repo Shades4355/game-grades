@@ -14,6 +14,7 @@ $lightgreen: #21b211;
 
   a {
     color: white;
+    font-family: "Noto Sans";
 
     &:hover {
       text-decoration: underline;
@@ -46,4 +47,28 @@ $lightgreen: #21b211;
 
 .title {
   font-family: "IBM Plex Serif"
+}
+
+.grid-padding-y {
+  padding-top: 1rem
+}
+
+.background-light-green {
+  background-color: $lightgreen
+}
+
+.bg-dark-green {
+  background-color: $darkgreen
+}
+
+.text-white {
+  color: white;
+}
+
+.link-white {
+  color: white;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

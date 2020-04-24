@@ -22,7 +22,7 @@ describe("GameTile", () => {
   })
 
   it ("should display the game name", () => {
-    expect(wrapper.find("h3").text()).toBe("Game 1")
+    expect(wrapper.find("h4").text()).toBe("Game 1")
   })
 
   it ("should display the number of players", () => {
