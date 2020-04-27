@@ -2,18 +2,16 @@ import React from 'react'
 
 
 const ReviewTile = props => {
-  const rating = props.rating 
-  const body = props.body 
-    
+  const rating = props.rating
+  const body = props.body
+
   return(
-    <div>
+    <ul>
       <li>
-        {rating} stars
-        <ul>
-          review: {body}
-        </ul>
+        {rating} Stars<br />
+        Review: {body}
       </li>
-    </div>
+    </ul>
   )
 }
 
