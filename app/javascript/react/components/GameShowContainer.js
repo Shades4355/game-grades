@@ -11,7 +11,7 @@ const GameShowContainer = props => {
     playerNum: "",
     reviews: []
   })
-debugger
+  
   useEffect(() => {
     let gameId = props.match.params.id
     fetch(`/api/v1/games/${gameId}.json`)
@@ -27,7 +27,6 @@ debugger
     .then(response => response.json())
     .then(gameBody => {
       const gamesArr = gameBody
-      // debugger
       setGame(gamesArr)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))

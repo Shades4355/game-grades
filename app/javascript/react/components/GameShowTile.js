@@ -1,4 +1,5 @@
 import React from 'react'
+import ReviewsIndexContainer from './ReviewsIndexContainer'
 
 
 const GameShowTile = props => {
@@ -18,8 +19,11 @@ const GameShowTile = props => {
       <div className='cell small-12'>
         Description: {description}
       </div>
-      <div>
-        {reviews}
+      <div className='cell small-12'>
+        Reviews: 
+        <ReviewsIndexContainer
+          reviews={reviews}
+        />
       </div>
     </div>
   )
