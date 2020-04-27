@@ -8,6 +8,14 @@ Enzyme.configure({ adapter: new Adapter() })
 
 describe("GameShowTile", () => {
   let wrapper
+  let reviews = [{
+    rating: 2,
+    body: "Played once; got skunked"
+  },
+  {
+    rating: 5,
+    body: "Love it! I always skunk newbies!"
+  }]
 
   beforeEach(() => {
     wrapper = mount(
@@ -15,6 +23,7 @@ describe("GameShowTile", () => {
         name="Cribbage"
         description="Cribbage, or crib, is a card game traditionally for two players, but commonly played with three, four or more, that involves playing and grouping cards in combinations which gain points."
         playerNum="2-4"
+        reviews={reviews}
       />)
   })
 
