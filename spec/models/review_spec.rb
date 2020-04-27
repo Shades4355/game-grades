@@ -5,5 +5,5 @@ RSpec.describe Review, type: :model do
   it { should have_valid(:body).when("i am reviewing this.")}
 
   it { should_not have_valid(:rating).when(nil, "", 6, -1, "three") }
-  it { should_not have_valid(:body).when(nil, "")}
+
 end
