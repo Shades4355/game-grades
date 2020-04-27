@@ -32,6 +32,14 @@ const UserShowContainer = props => {
         <div className="cell auto">
           <h2>{user.email}</h2>
         </div>
+        <div className="cell small-12">
+          <h2>Games Owned</h2>
+          
+        </div>
+        <div className="cell small-12">
+          <h2>Posted Reviews</h2>
+
+        </div>
       </div>
     </div>
   )
