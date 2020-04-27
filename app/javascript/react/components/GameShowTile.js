@@ -10,13 +10,13 @@ const GameShowTile = props => {
 
   return (
     <div className='grid-x grid-margin-x'>
-      <h1 className='cell small-12'>
+      <h1 className='cell small-12 title text-white'>
         {name}
       </h1>
-      <div className='cell small-12'>
+      <div className='cell small-12 body'>
         Number of Players: {playerNum}
       </div>
-      <div className='cell small-12'>
+      <div className='cell small-12 body'>
         Description: {description}
       </div>
       <div className='cell small-12'>
