@@ -3,8 +3,15 @@ import GameShowTile from './GameShowTile'
 
 
 const GameShowContainer = props => {
-  const [game, setGame] = useState({})
-
+  const [game, setGame] = useState({
+    key: 0,
+    id: 0,
+    name: "",
+    description: "",
+    playerNum: "",
+    reviews: []
+  })
+debugger
   useEffect(() => {
     let gameId = props.match.params.id
     fetch(`/api/v1/games/${gameId}.json`)
@@ -20,6 +27,7 @@ const GameShowContainer = props => {
     .then(response => response.json())
     .then(gameBody => {
       const gamesArr = gameBody
+      // debugger
       setGame(gamesArr)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
@@ -27,13 +35,14 @@ const GameShowContainer = props => {
 
   return (
     <div>
-    <GameShowTile
-      key={game.id}
-      id={game.id}
-      name={game.name}
-      description={game.description}
-      playerNum={game.player_num}
-    />
+      <GameShowTile
+        key={game.id}
+        id={game.id}
+        name={game.name}
+        description={game.description}
+        playerNum={game.player_num}
+        reviews={game.reviews}
+      />
     </div>
   )
 }

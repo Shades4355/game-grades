@@ -1,6 +1,7 @@
 import React from 'react'
 import GamesIndexContainer from './GamesIndexContainer'
 import GameShowContainer from './GameShowContainer'
+import ReviewsIndexContainer from './ReviewsIndexContainer'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
 
