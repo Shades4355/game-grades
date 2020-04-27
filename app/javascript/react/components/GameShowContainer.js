@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import GameShowTile from './GameShowTile'
+import NewReviewForm from './NewReviewForm'
 
 
 const GameShowContainer = props => {
@@ -11,7 +12,7 @@ const GameShowContainer = props => {
     playerNum: "",
     reviews: []
   })
-  
+
   useEffect(() => {
     let gameId = props.match.params.id
     fetch(`/api/v1/games/${gameId}.json`)
@@ -41,6 +42,10 @@ const GameShowContainer = props => {
         description={game.description}
         playerNum={game.player_num}
         reviews={game.reviews}
+      />
+
+      <NewReviewForm
+        game_id={game.id}
       />
     </div>
   )

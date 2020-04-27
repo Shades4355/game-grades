@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Redirect } from 'react-router-dom'
-
 import NewGameForm from "./NewGameForm"
+
 
 const NewGameContainer = props => {
   const [shouldRedirect, setShouldRedirect] = useState(false)

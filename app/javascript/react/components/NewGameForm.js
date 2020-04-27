@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import _ from 'lodash'
-
 import ErrorList from "./ErrorList"
+
 
 const NewGameForm = props => {
   const [errors, setErrors] = useState({})
