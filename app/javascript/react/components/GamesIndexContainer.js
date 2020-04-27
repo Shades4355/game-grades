@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import GameTile from './GameTile'
 
+
 const GamesIndexContainer = props => {
   const [games, setGames] = useState([]);
 
