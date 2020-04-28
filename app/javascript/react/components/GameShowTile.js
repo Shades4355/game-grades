@@ -4,11 +4,15 @@ import ReviewsIndexContainer from './ReviewsIndexContainer'
 
 const GameShowTile = props => {
   const {name, playerNum, description, reviews} = props
-debugger
   const addGame = () => {
     let gameId = props.id
-    fetch(`api/v1/games/${gameId}/owned_games`, {
-      method: "POST"
+    fetch(`/api/v1/games/${gameId}/owned_games`, {
+      credentials: "same-origin",
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }  
     })
     .then(response => {
       if (response.ok) {
