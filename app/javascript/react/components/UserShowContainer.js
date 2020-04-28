@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
+import {Link} from 'react-router-dom'
 
 const UserShowContainer = props => {
   const [user, setUser] = useState({
     email: "",
-    profile_photo: {url: ""}
+    profile_photo: {url: ""},
+    games: []
   })
-  
+
   useEffect(() => {
     let userId = props.match.params.id
     fetch('/api/v1/users/' + userId)
@@ -23,6 +25,14 @@ const UserShowContainer = props => {
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }, [])
 
+  let gameLibrary = user.games.map((game) => {
+    return (
+      <li key={game.id}>
+        <Link to={`/games/${game.id}`}>{game.name}</Link>
+      </li>
+    )
+  })
+
   return (
     <div className="grid-container">
       <div className="grid-x grid-margin-x grid-padding-y">
@@ -34,7 +44,9 @@ const UserShowContainer = props => {
         </div>
         <div className="cell small-12">
           <h2>Games Owned</h2>
-
+          <ul>
+            {gameLibrary}
+          </ul>
         </div>
         <div className="cell small-12">
           <h2>Posted Reviews</h2>

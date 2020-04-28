@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :games, only: [:index, :show, :create] do
         resources :owned_games, only: [:create, :show]
+        resources :reviews, only: [:index]
       end
       resources :users, only: [:show]
     end
