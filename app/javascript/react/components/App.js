@@ -4,7 +4,7 @@ import GamesIndexContainer from './GamesIndexContainer'
 import NewGameContainer from './NewGameContainer'
 import GameShowContainer from './GameShowContainer'
 import UserShowContainer from './UserShowContainer'
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
+
 
 
 export const App = (props) => {
