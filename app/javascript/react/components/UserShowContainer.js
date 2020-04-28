@@ -5,7 +5,7 @@ const UserShowContainer = props => {
     email: "",
     profile_photo: {url: ""}
   })
-
+  
   useEffect(() => {
     let userId = props.match.params.id
     fetch('/api/v1/users/' + userId)
@@ -34,7 +34,7 @@ const UserShowContainer = props => {
         </div>
         <div className="cell small-12">
           <h2>Games Owned</h2>
-          
+
         </div>
         <div className="cell small-12">
           <h2>Posted Reviews</h2>
