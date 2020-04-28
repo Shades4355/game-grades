@@ -72,3 +72,21 @@ $lightgreen: #21b211;
     text-decoration: underline;
   }
 }
+
+.profile-photo {
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  margin-left: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid rgba(10, 10, 10, 0.25);
+}
+
+.button {
+  background-color: $darkblue;
+  font-family: "Noto Sans";
+
+  &:hover {
+    background-color: $lightblue;
+  }
+}

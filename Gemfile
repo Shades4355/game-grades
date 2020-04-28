@@ -54,3 +54,9 @@ gem 'devise'
 gem 'foundation-rails', '~> 6.5'
 gem 'webpacker', '~> 3.3'
 gem 'active_model_serializers'
+
+# Use CarrierWave to handle file uploads
+gem 'carrierwave'
+
+# Use Fog to integrate with cloud storage
+gem 'fog'
