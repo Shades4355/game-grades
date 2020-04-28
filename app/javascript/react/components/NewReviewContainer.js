@@ -8,8 +8,9 @@ const NewReviewContainer = props => {
   const [shouldRedirect, setShouldRedirect] = useState(false)
 
   const handleFormSubmit = formData => {
+    debugger
     formData.game_id = game_id
-    fetch('/api/v1/reviews', {
+    fetch(`/api/v1/games/${props.match.params.game_id}/reviews`, {
       credentials: "same-origin",
       method: "POST",
       body: JSON.stringify(formData),
@@ -31,19 +32,20 @@ const NewReviewContainer = props => {
     .then(parsedData => {
       if (parsedData.errors){
       setErrors(parsedData.errors)
-    }
-      setShouldRedirect(true)
+      } else {
+        setShouldRedirect(true)
+      }
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }
 
   if(shouldRedirect) {
-    return <Redirect to={'/games/' + game_id} />
+    return <Redirect to={`/games/${game_id}`} />
   }
 
   return(
     <div>
-      <NewReviewForm 
+      <NewReviewForm
         handleFormSubmit={handleFormSubmit}
         game_id={game_id}
       />

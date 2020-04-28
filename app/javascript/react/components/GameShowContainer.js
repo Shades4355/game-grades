@@ -44,7 +44,6 @@ const GameShowContainer = props => {
             playerNum={game.player_num}
             reviews={game.reviews}
           />
-
           <NewReviewContainer
             game_id={game.id}
           />

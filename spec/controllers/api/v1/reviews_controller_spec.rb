@@ -8,8 +8,8 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
     let!(:user1) { User.create(email: "abc@abc.com", password: "abc123") }
     let!(:user2) { User.create(email: "123@123.com", password: "123abc") }
 
-    let!(:good_review_data) { { review: { rating: 1, body: "It's a review", user_id: user1["id"], game_id: game1["id"] } } }
-    let!(:bad_review_data) { { review: { rating: "", body: "It's another review", user_id: user2["id"], game_id: game2["id"]  } } }
+    let!(:good_review_data) { { review: { rating: 1, body: "It's a review", game_id: game1["id"] } } }
+    let!(:bad_review_data) { { review: { rating: "", body: "It's another review", game_id: game2["id"]  } } }
 
     it "adds a new review to the db" do
       sign_in user1

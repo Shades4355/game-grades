@@ -10,7 +10,7 @@ const NewReviewForm = props => {
     game_id: game_id
   })
   const [errors, setErrors] = useState({})
-  
+
   const handleChange = event => {
     setReview({
       ...review,
@@ -42,13 +42,12 @@ const NewReviewForm = props => {
 
   return (
   <div>
-    <br />
     <h4>Add a Review!</h4>
     <form onSubmit={handleSubmit}>
       <ErrorList
         errors={errors}
       />
-    
+
       <label htmlFor="rating">Rating (0-5):</label>
       <input
         type="text"
