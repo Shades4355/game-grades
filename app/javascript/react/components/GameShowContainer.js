@@ -33,19 +33,23 @@ const GameShowContainer = props => {
   }, [])
 
   return (
-    <div>
-      <GameShowTile
-        key={game.id}
-        id={game.id}
-        name={game.name}
-        description={game.description}
-        playerNum={game.player_num}
-        reviews={game.reviews}
-      />
+    <div className="grid-container">
+      <div className='grid-x grid-margin-x'>
+        <div className="cell small-12 medium-10 align-center">
+          <GameShowTile
+            key={game.id}
+            id={game.id}
+            name={game.name}
+            description={game.description}
+            playerNum={game.player_num}
+            reviews={game.reviews}
+          />
 
-      <NewReviewContainer
-        game_id={game.id}
-      />
+          <NewReviewContainer
+            game_id={game.id}
+          />
+        </div>
+      </div>
     </div>
   )
 }
