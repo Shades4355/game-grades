@@ -58,7 +58,7 @@ const NewReviewForm = props => {
         value={review.rating}
       />
 
-      <label htmlFor="body">Review: (optional)</label>
+      <label htmlFor="body">Review (optional):</label>
       <textarea
         name="body"
         id="body"
