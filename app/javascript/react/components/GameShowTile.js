@@ -1,6 +1,6 @@
 import React from 'react'
-import ReviewsIndexContainer from './ReviewsIndexContainer'
 
+import ReviewsIndexContainer from './ReviewsIndexContainer'
 
 const GameShowTile = props => {
   const name = props.name

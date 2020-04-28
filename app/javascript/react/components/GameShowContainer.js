@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import GameShowTile from './GameShowTile'
-import NewReviewForm from './NewReviewForm'
 
+import GameShowTile from './GameShowTile'
+import NewReviewContainer from './NewReviewContainer'
 
 const GameShowContainer = props => {
   const [game, setGame] = useState({
@@ -27,8 +27,7 @@ const GameShowContainer = props => {
     })
     .then(response => response.json())
     .then(gameBody => {
-      const gamesArr = gameBody
-      setGame(gamesArr)
+      setGame(gameBody)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }, [])
@@ -44,7 +43,7 @@ const GameShowContainer = props => {
         reviews={game.reviews}
       />
 
-      <NewReviewForm
+      <NewReviewContainer
         game_id={game.id}
       />
     </div>
