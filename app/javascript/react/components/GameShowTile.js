@@ -12,7 +12,7 @@ const GameShowTile = props => {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json"
-      }  
+      }
     })
     .then(response => {
       if (response.ok) {
@@ -32,7 +32,7 @@ const GameShowTile = props => {
         {name}
       </h1>
       <div className='button' onClick={addGame}>
-      Add game to Library
+        Add game to Library
       </div>
       <div className='cell small-12 body'>
         Number of Players: {playerNum}

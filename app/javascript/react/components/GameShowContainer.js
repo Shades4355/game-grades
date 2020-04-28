@@ -39,7 +39,6 @@ const GameShowContainer = props => {
       </div>
     )
   } else {
-
     return (
       <div>
         <GameShowTile
@@ -52,9 +51,7 @@ const GameShowContainer = props => {
         />
       </div>
     )
-
   }
-
 }
 
 export default GameShowContainer
