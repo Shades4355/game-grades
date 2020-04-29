@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 import GameShowTile from './GameShowTile'
 import NewReviewContainer from './NewReviewContainer'
@@ -12,6 +13,7 @@ const GameShowContainer = props => {
     playerNum: "",
     reviews: []
   })
+  const [loggedIn, setLoggedIn] = useState(false)
 
   let getGamePageInfo = () => {
     let gameId = props.match.params.id
@@ -27,12 +29,29 @@ const GameShowContainer = props => {
     })
     .then(response => response.json())
     .then(gameBody => {
-      setGame(gameBody)
+      setGame(gameBody.game)
+      setLoggedIn(gameBody.logged_in)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }
   useEffect(() => {
     getGamePageInfo()}, [])
+
+    let reviewContainerVariable
+    if ( loggedIn ) {
+      reviewContainerVariable = 
+      <NewReviewContainer
+        game_id={game.id}
+        getGamePageInfo={getGamePageInfo}
+      />
+    } else {
+      reviewContainerVariable = (
+        <div>
+          <h3 className='title'>Please <a href="/users/sign_in">Log In</a> to Leave a Comment</h3>
+        </div>
+      )
+    }
+
 
   if (game.id === null) {
     return(
@@ -53,10 +72,7 @@ const GameShowContainer = props => {
               playerNum={game.player_num}
               reviews={game.reviews}
             />
-            <NewReviewContainer
-              game_id={game.id}
-              getGamePageInfo={getGamePageInfo}
-            />
+            {reviewContainerVariable}
           </div>
         </div>
       </div>

@@ -7,13 +7,11 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
 
     let!(:user1) { User.create(email: "abc@abc.com", password: "abc123") }
     let!(:user2) { User.create(email: "123@123.com", password: "123abc") }
-
-    let!(:good_review_data) { { review: { rating: 1, body: "It's a review", game_id: game1["id"] } } }
-    let!(:bad_review_data) { { review: { rating: "", body: "It's another review", game_id: game2["id"]  } } }
-
+    
     it "adds a new review to the db" do
       sign_in user1
-
+      
+      good_review_data = { game_id: game1.id, review: { rating: 1, body: "It's a review" } } 
       before_count = Review.count
       post :create, params: good_review_data, format: :json
       after_count = Review.count
@@ -24,6 +22,7 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
     it "returns the new review as json" do
       sign_in user1
 
+      good_review_data = { game_id: game1.id, review: { rating: 1, body: "It's a review" } } 
       post :create, params: good_review_data, format: :json
       api_response = JSON.parse(response.body)
 
@@ -32,12 +31,14 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
       expect(api_response.length).to eq num_params
       expect(api_response["rating"]).to eq good_review_data[:review][:rating]
       expect(api_response["body"]).to eq good_review_data[:review][:body]
-      expect(api_response["user_id"]).to eq good_review_data[:review][:user_id]
-      expect(api_response["game_id"]).to eq good_review_data[:review][:game_id]
+      expect(api_response["user_id"]).to eq user1[:id]
+      expect(api_response["game_id"]).to eq game1[:id]
     end
 
     it "does not add incomplete/bad info to db" do
       sign_in user2
+
+      bad_review_data = { game_id: game2.id, review: { rating: " ", body: "It's another review" } }
 
       before_count = Review.count
       post :create, params: bad_review_data, format: :json
@@ -48,6 +49,8 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
 
     it "returns validation error json" do
       sign_in user2
+
+      bad_review_data = { game_id: game2.id, review: { rating: " ", body: "It's another review" } }
 
       post :create, params: bad_review_data, format: :json
       api_response = JSON.parse(response.body)

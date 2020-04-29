@@ -32,7 +32,7 @@ const NewGameContainer = props => {
     }
       setShouldRedirect(true)
     })
-    .catch(error => console.error(`Error in fetch: ${error.message}`)) // show validation errors
+    .catch(error => console.error(`Error in fetch: ${error.message}`))
   }
 
   if(shouldRedirect) {
