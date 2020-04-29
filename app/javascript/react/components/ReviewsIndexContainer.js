@@ -1,6 +1,6 @@
 import React from 'react'
-import ReviewTile from './ReviewTile'
 
+import ReviewTile from './ReviewTile'
 
 const ReviewsIndexContainer = props => {
   const reviews = props.reviews

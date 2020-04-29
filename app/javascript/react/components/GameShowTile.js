@@ -1,15 +1,19 @@
 import React from 'react'
+
 import ReviewsIndexContainer from './ReviewsIndexContainer'
 
-
 const GameShowTile = props => {
-  const {name, playerNum, description, reviews} = props
+  const {name, playerNum, description, reviews, photo} = props
 
   return (
     <div className='grid-x grid-margin-x'>
       <h1 className='cell small-12 title text-white'>
         {name}
       </h1>
+      <img
+        src={photo}
+        alt="image"
+      />
       <div className='cell small-12 body'>
         Number of Players: {playerNum}
       </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import GameShowTile from './GameShowTile'
 
+import GameShowTile from './GameShowTile'
 
 const GameShowContainer = props => {
   const [game, setGame] = useState({
@@ -9,9 +9,10 @@ const GameShowContainer = props => {
     name: "",
     description: "",
     playerNum: "",
-    reviews: []
+    reviews: [],
+    photo: ""
   })
-  
+
   useEffect(() => {
     let gameId = props.match.params.id
     fetch(`/api/v1/games/${gameId}.json`)
@@ -41,6 +42,7 @@ const GameShowContainer = props => {
         description={game.description}
         playerNum={game.player_num}
         reviews={game.reviews}
+        photo={game.photo}
       />
     </div>
   )
