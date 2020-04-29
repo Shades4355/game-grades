@@ -6,14 +6,14 @@ import NewReviewContainer from './NewReviewContainer'
 const GameShowContainer = props => {
   const [game, setGame] = useState({
     key: 0,
-    id: 0,
+    id: null,
     name: "",
     description: "",
     playerNum: "",
     reviews: []
   })
 
-  useEffect(() => {
+  let getGamePageInfo = () => {
     let gameId = props.match.params.id
     fetch(`/api/v1/games/${gameId}.json`)
     .then(response => {
@@ -30,27 +30,38 @@ const GameShowContainer = props => {
       setGame(gameBody)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
-  }, [])
+  }
+  useEffect(() => {
+    getGamePageInfo()}, [])
 
-  return (
-    <div className="grid-container">
-      <div className='grid-x grid-margin-x'>
-        <div className="cell small-12 medium-10 align-center">
-          <GameShowTile
-            key={game.id}
-            id={game.id}
-            name={game.name}
-            description={game.description}
-            playerNum={game.player_num}
-            reviews={game.reviews}
-          />
-          <NewReviewContainer
-            game_id={game.id}
-          />
+  if (game.id === null) {
+    return(
+      <h1>
+        Loading...
+      </h1>
+    )
+  } else {
+    return (
+      <div className="grid-container">
+        <div className='grid-x grid-margin-x'>
+          <div className="cell small-12 medium-10 align-center">
+            <GameShowTile
+              key={game.id}
+              id={game.id}
+              name={game.name}
+              description={game.description}
+              playerNum={game.player_num}
+              reviews={game.reviews}
+            />
+            <NewReviewContainer
+              game_id={game.id}
+              getGamePageInfo={getGamePageInfo}
+            />
+          </div>
         </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 export default GameShowContainer

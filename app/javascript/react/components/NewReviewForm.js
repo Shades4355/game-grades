@@ -7,7 +7,6 @@ const NewReviewForm = props => {
   const [review, setReview] = useState({
     rating: "",
     body: "",
-    game_id: game_id
   })
   const [errors, setErrors] = useState({})
 
@@ -27,6 +26,11 @@ const NewReviewForm = props => {
           ...newErrors,
           [field]: "is blank"
         }
+      } else if (isNaN(parseInt(review[field])) || review[field] > 5 || review[field] < 0) {
+        newErrors = {
+          ...newErrors,
+          [field]: "must be a number from 0-5"
+        }
       }
     })
     setErrors(newErrors)
@@ -37,6 +41,10 @@ const NewReviewForm = props => {
     event.preventDefault();
     if(validateForm()){
       props.handleFormSubmit(review)
+      setReview({
+        rating: "",
+        body: "",
+      })
     }
   }
 

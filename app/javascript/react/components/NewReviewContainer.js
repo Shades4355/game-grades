@@ -1,16 +1,13 @@
 import React, { useState } from 'react'
-import { Redirect } from 'react-router-dom'
 
 import NewReviewForm from './NewReviewForm'
 
 const NewReviewContainer = props => {
   const game_id = props.game_id
-  const [shouldRedirect, setShouldRedirect] = useState(false)
+  const getGamePageInfo = props.getGamePageInfo
 
   const handleFormSubmit = formData => {
-    debugger
-    formData.game_id = game_id
-    fetch(`/api/v1/games/${props.match.params.game_id}/reviews`, {
+    fetch(`/api/v1/games/${game_id}/reviews`, {
       credentials: "same-origin",
       method: "POST",
       body: JSON.stringify(formData),
@@ -33,14 +30,11 @@ const NewReviewContainer = props => {
       if (parsedData.errors){
       setErrors(parsedData.errors)
       } else {
-        setShouldRedirect(true)
+        getGamePageInfo()
+        
       }
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
-  }
-
-  if(shouldRedirect) {
-    return <Redirect to={`/games/${game_id}`} />
   }
 
   return(
