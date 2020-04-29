@@ -13,7 +13,6 @@ const GameShowContainer = props => {
     playerNum: "",
     reviews: []
   })
-  const [loggedIn, setLoggedIn] = useState(false)
 
   let getGamePageInfo = () => {
     let gameId = props.match.params.id
@@ -29,29 +28,27 @@ const GameShowContainer = props => {
     })
     .then(response => response.json())
     .then(gameBody => {
-      setGame(gameBody.game)
-      setLoggedIn(gameBody.logged_in)
+      setGame(gameBody)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }
   useEffect(() => {
     getGamePageInfo()}, [])
 
-    let reviewContainerVariable
-    if ( loggedIn ) {
-      reviewContainerVariable = 
+    let showReviewContainer
+    if (game.current_user) {
+      showReviewContainer = 
       <NewReviewContainer
         game_id={game.id}
         getGamePageInfo={getGamePageInfo}
       />
     } else {
-      reviewContainerVariable = (
+      showReviewContainer = (
         <div>
           <h3 className='title'>Please <a href="/users/sign_in">Log In</a> to Leave a Comment</h3>
         </div>
       )
     }
-
 
   if (game.id === null) {
     return(
@@ -72,7 +69,7 @@ const GameShowContainer = props => {
               playerNum={game.player_num}
               reviews={game.reviews}
             />
-            {reviewContainerVariable}
+            {showReviewContainer}
           </div>
         </div>
       </div>

@@ -6,10 +6,7 @@ class Api::V1::GamesController < ApplicationController
   end
 
   def show
-    render json: {
-      game: serialized_data(Game.find(params[:id]), GameSerializer),
-      logged_in: user_signed_in?
-    }
+    render json: Game.find(params[:id])
   end
   
   def create
@@ -31,10 +28,6 @@ class Api::V1::GamesController < ApplicationController
 
   def game_params
     params.require(:game).permit(:name, :description, :player_num)
-  end
-
-  def serialized_data(data, serializer)
-    ActiveModelSerializers::SerializableResource.new(data, each_serializer: serializer)
   end
 
 end
