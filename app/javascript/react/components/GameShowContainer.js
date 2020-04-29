@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import GameShowTile from './GameShowTile'
 
+import GameShowTile from './GameShowTile'
 
 const GameShowContainer = props => {
   const [game, setGame] = useState({
