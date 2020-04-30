@@ -3,8 +3,6 @@ require 'rails_helper'
 RSpec.describe Api::V1::UsersController, type: :controller do
   describe "GET#show" do
     let!(:user1) { FactoryBot.create(:user) }
-    let!(:user2) { FactoryBot.create(:user) }
-
     let!(:game1) { FactoryBot.create(:game) }
 
     it "returns successful response code and json content" do
