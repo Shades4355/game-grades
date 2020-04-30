@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_27_190438) do
+ActiveRecord::Schema.define(version: 2020_04_29_173257) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_04_27_190438) do
     t.string "player_num", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo", default: "https://pbs.twimg.com/profile_images/1161080182503018497/pixOpj3-_400x400.jpg"
   end
 
   create_table "owned_games", force: :cascade do |t|

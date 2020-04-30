@@ -50,7 +50,6 @@ const UserShowContainer = props => {
         </div>
         <div className="cell small-12">
           <h2>Posted Reviews</h2>
-
         </div>
       </div>
     </div>
