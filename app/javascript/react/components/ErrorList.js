@@ -1,7 +1,6 @@
 import React from "react"
 import _ from 'lodash'
 
-
 const ErrorList = props => {
   const errorFields = Object.keys(props.errors)
   if(errorFields.length > 0) {

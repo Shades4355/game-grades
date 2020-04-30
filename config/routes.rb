@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get "/games/new", to: 'homes#index'
   get "/games/:id", to: 'homes#index'
   get "/users/:id", to: 'homes#index'
+  get "/games/:id/reviews/new", to: "home#index"
+
+  devise_for :users
 
   namespace :api do
     namespace :v1 do

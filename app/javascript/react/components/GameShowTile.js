@@ -27,7 +27,7 @@ const GameShowTile = props => {
   }
 
   return (
-    <div className='grid-x grid-margin-x'>
+    <div>
       <h1 className='cell small-12 title text-white'>
         {name}
       </h1>
