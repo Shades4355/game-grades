@@ -4,7 +4,7 @@ import ReviewsIndexContainer from './ReviewsIndexContainer'
 
 const GameShowTile = props => {
   const {name, playerNum, description, reviews, photo} = props
-  
+
   const addGame = () => {
     let gameId = props.id
     fetch(`/api/v1/games/${gameId}/owned_games`, {
@@ -32,10 +32,13 @@ const GameShowTile = props => {
       <h1 className='cell small-12 title text-white'>
         {name}
       </h1>
-      <img
-        src={photo}
-        alt="image"
-      />
+      <div>
+        <img
+          src={photo}
+          alt="image"
+        />
+      </div>
+      <br />
       <div className='button' onClick={addGame}>
         Add game to Library
       </div>
