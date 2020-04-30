@@ -32,10 +32,10 @@ describe("GameShowTile", () => {
   })
 
   it ("should display the game description", () => {
-    expect(wrapper.find("div").at(3).text()).toBe("Description: Cribbage, or crib, is a card game traditionally for two players, but commonly played with three, four or more, that involves playing and grouping cards in combinations which gain points.")
+    expect(wrapper.find("div").at(4).text()).toBe("Description: Cribbage, or crib, is a card game traditionally for two players, but commonly played with three, four or more, that involves playing and grouping cards in combinations which gain points.")
   })
 
   it ("should display the number of players", () => {
-    expect(wrapper.find("div").at(2).text()).toBe("Number of Players: 2-4")
+    expect(wrapper.find("div").at(3).text()).toBe("Number of Players: 2-4")
   })
 })
