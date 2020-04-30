@@ -43,7 +43,7 @@ RSpec.describe Api::V1::GamesController, type: :controller do
       post :create, params: good_game_data, format: :json
       api_response = JSON.parse(response.body)
 
-      expect(api_response.length).to eq 6
+      expect(api_response.length).to eq 9
       expect(api_response["name"]).to eq good_game_data[:game][:name]
       expect(api_response["description"]).to eq good_game_data[:game][:description]
       expect(api_response["player_num"]).to eq good_game_data[:game][:player_num]
