@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 2020_04_29_173257) do
     t.string "photo", default: "https://pbs.twimg.com/profile_images/1161080182503018497/pixOpj3-_400x400.jpg"
   end
 
+  create_table "owned_games", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "game_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_owned_games_on_game_id"
+    t.index ["user_id"], name: "index_owned_games_on_user_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "game_id", null: false
