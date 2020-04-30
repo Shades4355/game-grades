@@ -32,7 +32,7 @@ const UserShowContainer = props => {
       </li>
     )
   })
-
+debugger
   return (
     <div className="grid-container">
       <div className="grid-x grid-margin-x grid-padding-y">
