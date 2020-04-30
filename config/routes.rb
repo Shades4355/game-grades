@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'homes#index'  
+  root 'homes#index'
 
   devise_for :users
 
@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   get "/games/new", to: 'homes#index'
   get "/games/:id", to: 'homes#index'
   get "/games/:id/reviews/new", to: "homes#index"
+  get "users/:id", to: "homes#index"
   get "/reviews/:id/edit", to: "homes#index"
 end
