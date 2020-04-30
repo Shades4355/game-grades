@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 const ReviewTile = props => {
   const rating = props.rating
   const body = props.body

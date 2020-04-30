@@ -1,13 +1,13 @@
-import React, { useState } from "react"
-import { Redirect } from 'react-router-dom'
+import React, { useState } from 'react'
 
-import NewGameForm from "./NewGameForm"
+import NewReviewForm from './NewReviewForm'
 
-const NewGameContainer = props => {
-  const [shouldRedirect, setShouldRedirect] = useState(false)
+const NewReviewContainer = props => {
+  const game_id = props.game_id
+  const getGamePageInfo = props.getGamePageInfo
 
   const handleFormSubmit = formData => {
-    fetch('/api/v1/games', {
+    fetch(`/api/v1/games/${game_id}/reviews`, {
       credentials: "same-origin",
       method: "POST",
       body: JSON.stringify(formData),
@@ -29,21 +29,22 @@ const NewGameContainer = props => {
     .then(parsedData => {
       if (parsedData.errors){
       setErrors(parsedData.errors)
-    }
-      setShouldRedirect(true)
+      } else {
+        getGamePageInfo()
+        
+      }
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }
 
-  if(shouldRedirect) {
-    return <Redirect to='/games' />
-  }
-
-  return (
-    <NewGameForm
-      handleFormSubmit={handleFormSubmit}
-    />
+  return(
+    <div>
+      <NewReviewForm
+        handleFormSubmit={handleFormSubmit}
+        game_id={game_id}
+      />
+    </div>
   )
 }
 
-export default NewGameContainer
+export default NewReviewContainer
