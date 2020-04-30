@@ -45,48 +45,52 @@ const NewGameForm = props => {
   }
 
   return (
-    <div>
-      <h2>Add a game to our library!</h2>
-      <form onSubmit={handleSubmit}>
-        <ErrorList
-          errors={errors}
-        />
+    <div className="grid-container">
+      <div className="grid-x grid-margin-x align-center">
+        <div className="cell small-12 medium-10">
+          <h2 className="text-white">Add a game to our library!</h2>
+          <form onSubmit={handleSubmit}>
+            <ErrorList
+              errors={errors}
+            />
 
-        <label htmlFor="name">Game Name:</label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          onChange={handleChange}
-          value={formVals.name}
-        />
+            <label htmlFor="name" className="text-white">Game Name:</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              onChange={handleChange}
+              value={formVals.name}
+            />
 
-        <label htmlFor="description">Game Description:</label>
-        <textarea
-          name="description"
-          id="description"
-          onChange={handleChange}
-          value={formVals.description}
-        />
+            <label htmlFor="description" className="text-white">Game Description:</label>
+            <textarea
+              name="description"
+              id="description"
+              onChange={handleChange}
+              value={formVals.description}
+            />
 
-        <label htmlFor="player_num">Number of Players:</label>
-        <input
-          type="text"
-          name="player_num"
-          id="player_num"
-          onChange={handleChange}
-        />
+            <label htmlFor="player_num" className="text-white">Number of Players:</label>
+            <input
+              type="text"
+              name="player_num"
+              id="player_num"
+              onChange={handleChange}
+            />
+    
+            <label htmlFor="photo">Game Image URL:</label>
+            <input
+              type="text"
+              name="photo"
+              id="photo"
+              onChange={handleChange}
+            />
 
-        <label htmlFor="photo">Game Image URL:</label>
-        <input
-          type="text"
-          name="photo"
-          id="photo"
-          onChange={handleChange}
-        />
-
-        <input className="button" type="submit" />
-      </form>
+            <input className="button" type="submit" />
+          </form>
+        </div>
+      </div>
     </div>
   )
 }
