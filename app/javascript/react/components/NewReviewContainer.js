@@ -31,7 +31,6 @@ const NewReviewContainer = props => {
       setErrors(parsedData.errors)
       } else {
         getGamePageInfo()
-        
       }
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
