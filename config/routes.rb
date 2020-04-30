@@ -9,6 +9,7 @@ Rails.application.routes.draw do
         resources :owned_games, only: [:create, :show]
         resources :reviews, only: [:index, :create]
       end
+      resources :reviews, only: [:edit, :update, :destroy]
       resources :users, only: [:show]
     end
   end
@@ -16,5 +17,7 @@ Rails.application.routes.draw do
   get "/games", to: 'homes#index'
   get "/games/new", to: 'homes#index'
   get "/games/:id", to: 'homes#index'
-  get "/users/:id", to: 'homes#index'
+  get "/games/:id/reviews/new", to: "homes#index"
+  get "users/:id", to: "homes#index"
+  get "/reviews/:id/edit", to: "homes#index"
 end

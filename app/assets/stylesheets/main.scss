@@ -58,7 +58,7 @@ $lightgreen: #21b211;
 }
 
 .bg-dark-green {
-  background-color: $darkgreen
+  background-color: $darkgreen;
 }
 
 .text-white {
@@ -88,6 +88,15 @@ $lightgreen: #21b211;
 
   &:hover {
     background-color: $lightblue;
+  }
+}
+
+.button-green {
+  background-color: $darkgreen;
+  font-family: "Noto Sans";
+
+  &:hover {
+    background-color: $lightgreen;
   }
 }
 

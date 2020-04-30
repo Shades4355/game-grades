@@ -52,6 +52,7 @@ const GameShowTile = props => {
         Reviews:
         <ReviewsIndexContainer
           reviews={reviews}
+          currentUser={props.currentUser}
         />
       </div>
     </div>
