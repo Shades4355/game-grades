@@ -8,7 +8,7 @@ class Api::V1::GamesController < ApplicationController
   def show
     render json: Game.find(params[:id])
   end
-  
+
   def create
     new_game = Game.new(game_params)
     if new_game.save

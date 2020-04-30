@@ -41,11 +41,11 @@ $lightgreen: #21b211;
   }
 }
 
-.body {
+.body, p, label {
   font-family: "Noto Sans"
 }
 
-.title {
+.title, h1, h2, h3, h4, h5, h6 {
   font-family: "IBM Plex Serif"
 }
 
@@ -89,4 +89,10 @@ $lightgreen: #21b211;
   &:hover {
     background-color: $lightblue;
   }
+}
+
+.user-show-profile-photo {
+  width: 12rem;
+  height: 16rem;
+  object-fit: cover;
 }
