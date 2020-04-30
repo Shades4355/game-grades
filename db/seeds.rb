@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Game.create(name: 'Settlers of Catan', description: "A fun-filled game about driving your friends villages to ruin through economic pressure",
+settlers = Game.create(name: 'Settlers of Catan', description: "A fun-filled game about driving your friends villages to ruin through economic pressure",
 player_num: '3 - 5')
 Game.create(name: 'Uno', description: "A fun way to ruin friendships", player_num: "2-8")
+
+u1 = User.create(email: "fake@fake.fake", password: "123456")
+
+Review.create(rating: 4, body: "It's a game I like!", user: u1, game: settlers)
