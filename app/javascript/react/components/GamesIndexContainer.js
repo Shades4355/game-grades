@@ -32,6 +32,7 @@ const GamesIndexContainer = props => {
         name={game.name}
         description={game.description}
         playerNum={game.player_num}
+        photo={game.photo}
       />
     )
   })

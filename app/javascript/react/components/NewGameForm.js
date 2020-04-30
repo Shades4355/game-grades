@@ -9,7 +9,8 @@ const NewGameForm = props => {
   const [formVals, setFormVals] = useState({
     name: "",
     description: "",
-    player_num: ""
+    player_num: "",
+    photo: ""
   })
 
   const handleChange = event => {
@@ -75,6 +76,14 @@ const NewGameForm = props => {
               type="text"
               name="player_num"
               id="player_num"
+              onChange={handleChange}
+            />
+    
+            <label htmlFor="photo">Game Image URL:</label>
+            <input
+              type="text"
+              name="photo"
+              id="photo"
               onChange={handleChange}
             />
 

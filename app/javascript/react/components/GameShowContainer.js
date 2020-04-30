@@ -11,7 +11,8 @@ const GameShowContainer = props => {
     name: "",
     description: "",
     playerNum: "",
-    reviews: []
+    reviews: [],
+    photo: ""
   })
 
   let getGamePageInfo = () => {
@@ -68,6 +69,7 @@ const GameShowContainer = props => {
               description={game.description}
               playerNum={game.player_num}
               reviews={game.reviews}
+              photo={game.photo}
             />
             {showReviewContainer}
           </div>
