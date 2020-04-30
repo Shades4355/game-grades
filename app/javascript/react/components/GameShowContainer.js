@@ -35,7 +35,7 @@ const GameShowContainer = props => {
   }
   useEffect(() => {
     getGamePageInfo()}, [])
-
+      
     let showReviewContainer
     if (game.current_user) {
       showReviewContainer =

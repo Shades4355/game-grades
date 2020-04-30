@@ -13,6 +13,10 @@ class Api::V1::ReviewsController < ApplicationController
     end
   end
 
+  def edit
+    render json: Review.find(params[:id])
+  end
+
   private
 
   def review_params
