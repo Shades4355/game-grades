@@ -12,7 +12,7 @@ const GameShowContainer = props => {
     description: "",
     playerNum: "",
     reviews: [],
-    current_user: {}
+    current_user: {},
     photo: ""
   })
 
@@ -36,7 +36,7 @@ const GameShowContainer = props => {
   }
   useEffect(() => {
     getGamePageInfo()}, [])
-      
+
     let showReviewContainer
     if (game.current_user) {
       showReviewContainer =
