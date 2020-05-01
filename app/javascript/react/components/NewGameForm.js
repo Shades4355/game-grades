@@ -78,8 +78,8 @@ const NewGameForm = props => {
               id="player_num"
               onChange={handleChange}
             />
-    
-            <label htmlFor="photo">Game Image URL:</label>
+
+            <label htmlFor="photo"  className="text-white">Game Image URL:</label>
             <input
               type="text"
               name="photo"

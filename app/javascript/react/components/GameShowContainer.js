@@ -12,6 +12,7 @@ const GameShowContainer = props => {
     description: "",
     playerNum: "",
     reviews: [],
+    current_user: {},
     photo: ""
   })
 
@@ -38,7 +39,7 @@ const GameShowContainer = props => {
 
     let showReviewContainer
     if (game.current_user) {
-      showReviewContainer = 
+      showReviewContainer =
       <NewReviewContainer
         game_id={game.id}
         getGamePageInfo={getGamePageInfo}
@@ -69,6 +70,7 @@ const GameShowContainer = props => {
               description={game.description}
               playerNum={game.player_num}
               reviews={game.reviews}
+              currentUser={game.current_user}
               photo={game.photo}
             />
             {showReviewContainer}
