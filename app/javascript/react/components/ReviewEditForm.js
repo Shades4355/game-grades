@@ -68,7 +68,7 @@ const ReviewEditForm = props => {
   }
 
   if (shouldRedirect) {
-    return <Redirect to='/games' />
+    return <Redirect to={`/games/${review.game.id}`} />
   }
   return (
     <div>

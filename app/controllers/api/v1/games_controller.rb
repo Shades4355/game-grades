@@ -11,6 +11,7 @@ class Api::V1::GamesController < ApplicationController
 
   def create
     new_game = Game.new(game_params)
+
     if new_game.save
       render json: new_game
     else
@@ -27,7 +28,11 @@ class Api::V1::GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:name, :description, :player_num, :photo)
+    if params[:photo].strip.empty?
+      params.require(:game).permit(:name, :description, :player_num)
+    else
+      params.require(:game).permit(:name, :description, :player_num, :photo)
+    end
   end
 
 end

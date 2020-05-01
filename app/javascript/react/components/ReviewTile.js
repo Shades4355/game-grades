@@ -31,15 +31,11 @@ const ReviewTile = props => {
         if (parsedData.errors){
         setErrors(parsedData.errors)
         } else {
-          setShouldRedirect(true)
+          props.getGamePageInfo()
         }
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`))
     }
-
-  if (shouldRedirect) {
-    return <Redirect to='/games' />
-  }
 
   let editDelete
 
