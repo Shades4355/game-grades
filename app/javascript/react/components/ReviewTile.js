@@ -43,7 +43,7 @@ const ReviewTile = props => {
 
   let editDelete
 
-  if (currentUser.id === reviewUser) {
+  if (currentUser && currentUser.id === reviewUser) {
     editDelete = <div>
       <div className='button success'>
         <Link to={`/reviews/${props.id}/edit`}>Edit</Link>
