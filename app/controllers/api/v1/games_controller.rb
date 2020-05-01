@@ -28,7 +28,7 @@ class Api::V1::GamesController < ApplicationController
   private
 
   def game_params
-    if params[:photo].strip.empty?
+    if !params[:photo] || params[:photo].strip.empty?
       params.require(:game).permit(:name, :description, :player_num)
     else
       params.require(:game).permit(:name, :description, :player_num, :photo)
