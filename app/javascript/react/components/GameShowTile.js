@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import ReviewsIndexContainer from './ReviewsIndexContainer'
 
 const GameShowTile = props => {
-  const {name, playerNum, description, reviews, photo} = props
+  const {name, playerNum, description, reviews, photo, currentUser} = props
   const [gameAdded, setGameAdded] = useState(false)
 
   const addGame = () => {
@@ -36,6 +36,18 @@ const GameShowTile = props => {
     gameAddedStatus = ""
   }
 
+  let loggedInStatus
+  if(currentUser){
+    loggedInStatus = <div>
+      <div className='button' onClick={addGame}>
+        Add game to Library
+      </div>
+      {gameAddedStatus}
+    </div>
+  } else {
+    loggedInStatus = ""
+  }
+
   return (
     <div>
       <h1 className='cell small-12 title text-white'>
@@ -48,12 +60,7 @@ const GameShowTile = props => {
         />
       </div>
       <br />
-      <div>
-        <div className='button' onClick={addGame}>
-          Add game to Library
-        </div>
-        {gameAddedStatus}
-      </div>
+      {loggedInStatus}
       <div className='cell small-12 body'>
         <p><strong>Number of Players:</strong> {playerNum}</p>
       </div>
