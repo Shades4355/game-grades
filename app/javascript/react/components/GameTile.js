@@ -8,7 +8,7 @@ const GameTile = props => {
   const photo = props.photo
 
   return (
-    <div className='callout bg-dark-green cell small-12 medium-4'>
+    <div className='callout bg-dark-green cell small-12 medium-4 text-center game-tile'>
       <img
         src={photo}
         alt="image"

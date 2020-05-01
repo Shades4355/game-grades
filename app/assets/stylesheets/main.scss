@@ -42,11 +42,12 @@ $lightgreen: #21b211;
 }
 
 .body, p, label {
-  font-family: "Noto Sans"
+  font-family: "Noto Sans";
 }
 
 .title, h1, h2, h3, h4, h5, h6 {
-  font-family: "IBM Plex Serif"
+  font-family: "IBM Plex Serif";
+  color: white;
 }
 
 .grid-padding-y {
@@ -85,9 +86,18 @@ $lightgreen: #21b211;
 .button {
   background-color: $darkblue;
   font-family: "Noto Sans";
+  border-radius: 0.25rem;
 
   &:hover {
     background-color: $lightblue;
+  }
+
+  &.success {
+    background-color: $lightgreen;
+
+    a {
+      color: black
+    }
   }
 }
 
@@ -104,4 +114,18 @@ $lightgreen: #21b211;
   width: 12rem;
   height: 16rem;
   object-fit: cover;
+}
+
+.callout.secondary {
+  background-color: #3adb76;
+  border: 1px solid $darkgreen;
+  border-radius: 0.5rem;
+}
+
+.game-tile {
+  border-radius: 0.5rem;
+
+  img {
+    border-radius: 0.5rem;
+  }
 }

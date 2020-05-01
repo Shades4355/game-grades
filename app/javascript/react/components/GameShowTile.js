@@ -43,13 +43,13 @@ const GameShowTile = props => {
         Add game to Library
       </div>
       <div className='cell small-12 body'>
-        Number of Players: {playerNum}
+        <p><strong>Number of Players:</strong> {playerNum}</p>
       </div>
       <div className='cell small-12 body'>
-        Description: {description}
+        <p><strong>Description:</strong> {description}</p>
       </div>
       <div className='cell small-12'>
-        Reviews:
+        <strong>Reviews:</strong>
         <ReviewsIndexContainer
           reviews={reviews}
           currentUser={props.currentUser}
