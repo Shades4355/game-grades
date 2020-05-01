@@ -22,7 +22,8 @@ const NewGameForm = props => {
 
   const validateForm = () => {
     let newErrors = {}
-    Object.keys(formVals).forEach((field) => {
+    const requiredFields = ["name", "description", "player_num"]
+    requiredFields.forEach((field) => {
       if(formVals[field].trim() === "") {
         if(field === "player_num"){
           field = "Number of players"

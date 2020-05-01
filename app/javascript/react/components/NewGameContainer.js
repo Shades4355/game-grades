@@ -5,6 +5,7 @@ import NewGameForm from "./NewGameForm"
 
 const NewGameContainer = props => {
   const [shouldRedirect, setShouldRedirect] = useState(false)
+  const [newGame, setNewGame] = useState({})
 
   const handleFormSubmit = formData => {
     fetch('/api/v1/games', {
@@ -30,13 +31,14 @@ const NewGameContainer = props => {
       if (parsedData.errors){
       setErrors(parsedData.errors)
     }
+      setNewGame(parsedData)
       setShouldRedirect(true)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }
 
   if(shouldRedirect) {
-    return <Redirect to='/games' />
+    return <Redirect to={`/games/${newGame.id}`} />
   }
 
   return (

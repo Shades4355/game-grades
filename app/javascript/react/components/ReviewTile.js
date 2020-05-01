@@ -31,24 +31,21 @@ const ReviewTile = props => {
         if (parsedData.errors){
         setErrors(parsedData.errors)
         } else {
-          setShouldRedirect(true)
+          props.getGamePageInfo()
         }
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`))
     }
 
-  if (shouldRedirect) {
-    return <Redirect to='/games' />
-  }
-
   let editDelete
 
   if (currentUser && currentUser.id === reviewUser) {
-    editDelete = <div>
-      <div className='button success'>
+    editDelete =
+    <div className="grid-x grid-margin-x">
+      <div className='button success cell small-2 text-center'>
         <Link to={`/reviews/${props.id}/edit`}>Edit</Link>
       </div>
-      < div className='button success' onClick={deleteReview}>
+      < div className='button success cell small-2 text-center' onClick={deleteReview}>
         Delete
       </div>
     </div>
@@ -57,13 +54,11 @@ const ReviewTile = props => {
   }
 
   return(
-    <ul>
-      <li>
-        {rating} Stars<br />
-        {body}
+    <div className="callout secondary">
+        <p>{rating} Stars<br />
+        {body}</p>
         {editDelete}
-      </li>
-    </ul>
+    </div>
   )
 }
 

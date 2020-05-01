@@ -14,6 +14,7 @@ const ReviewsIndexContainer = props => {
         rating={review.rating}
         body={review.body}
         currentUser={props.currentUser}
+        getGamePageInfo={props.getGamePageInfo}
       />
     )
   })

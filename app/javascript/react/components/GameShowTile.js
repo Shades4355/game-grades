@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import ReviewsIndexContainer from './ReviewsIndexContainer'
 
 const GameShowTile = props => {
   const {name, playerNum, description, reviews, photo} = props
+  const [gameAdded, setGameAdded] = useState(false)
 
   const addGame = () => {
     let gameId = props.id
@@ -17,6 +18,7 @@ const GameShowTile = props => {
     })
     .then(response => {
       if (response.ok) {
+        setGameAdded(true)
         return response
       } else {
         let errorMessage = `${response.status} (${response.statusText})`,
@@ -25,6 +27,13 @@ const GameShowTile = props => {
       }
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
+  }
+
+  let gameAddedStatus
+  if(gameAdded) {
+    gameAddedStatus = <p className="text-white">Game added to your library!</p>
+  } else {
+    gameAddedStatus = ""
   }
 
   return (
@@ -39,20 +48,24 @@ const GameShowTile = props => {
         />
       </div>
       <br />
-      <div className='button' onClick={addGame}>
-        Add game to Library
+      <div>
+        <div className='button' onClick={addGame}>
+          Add game to Library
+        </div>
+        {gameAddedStatus}
       </div>
       <div className='cell small-12 body'>
-        Number of Players: {playerNum}
+        <p><strong>Number of Players:</strong> {playerNum}</p>
       </div>
       <div className='cell small-12 body'>
-        Description: {description}
+        <p><strong>Description:</strong> {description}</p>
       </div>
       <div className='cell small-12'>
-        Reviews:
+        <strong>Reviews:</strong>
         <ReviewsIndexContainer
           reviews={reviews}
           currentUser={props.currentUser}
+          getGamePageInfo={props.getGamePageInfo}
         />
       </div>
     </div>
