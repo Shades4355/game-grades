@@ -71,32 +71,36 @@ const ReviewEditForm = props => {
     return <Redirect to={`/games/${review.game.id}`} />
   }
   return (
-    <div>
-      <h4>Edit your Review!</h4>
-      <form onSubmit={handleSubmit}>
-        <ErrorList
-          errors={errors}
-        />
+    <div className="grid-container">
+      <div className='grid-x grid-margin-x align-center'>
+        <div className="cell small-12 medium-10">
+          <h4>Edit your Review!</h4>
+          <form onSubmit={handleSubmit}>
+            <ErrorList
+              errors={errors}
+            />
 
-        <label htmlFor="rating">Rating (0-5):</label>
-        <input
-          type="text"
-          name="rating"
-          id="rating"
-          onChange={handleChange}
-          value={review.rating}
-        />
+            <label htmlFor="rating" className="text-white">Rating (0-5):</label>
+            <input
+              type="text"
+              name="rating"
+              id="rating"
+              onChange={handleChange}
+              value={review.rating}
+            />
 
-        <label htmlFor="body">Review (optional):</label>
-        <textarea
-          name="body"
-          id="body"
-          onChange={handleChange}
-          value={review.body}
-        />
+            <label htmlFor="body" className="text-white">Review (optional):</label>
+            <textarea
+              name="body"
+              id="body"
+              onChange={handleChange}
+              value={review.body}
+            />
 
-        <input className="button" type="submit" />
-      </form>
+            <input className="button" type="submit" />
+          </form>
+        </div>
+      </div>
     </div>
   )
 }
